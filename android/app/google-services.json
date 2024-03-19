@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "222083994414",
+    "project_id": "lina-project-c7424",
+    "storage_bucket": "lina-project-c7424.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222083994414:android:5771c5c9113cda4f58a0bf",
+        "android_client_info": {
+          "package_name": "com.example.vitafit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0FLQsGq99t3Lb4LlHzRC6pqt_e0rV1Y0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
