@@ -23,11 +23,11 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Form(
-          key: formKey,
-          child: SingleChildScrollView(
-            child: BlurryModalProgressHUD(
-              inAsyncCall: isLoading,
+        body: BlurryModalProgressHUD(
+          inAsyncCall: isLoading,
+          child: Form(
+            key: formKey,
+            child: SingleChildScrollView(
               child: Column(children: [
                 const ApplicationIcon(),
                 CustomTextField(
