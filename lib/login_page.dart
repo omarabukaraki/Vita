@@ -23,20 +23,22 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: BlurryModalProgressHUD(
-          inAsyncCall: isLoading,
-          child: Form(
-            key: formKey,
-            child: SingleChildScrollView(
+        body: Form(
+          key: formKey,
+          child: SingleChildScrollView(
+            child: BlurryModalProgressHUD(
+              inAsyncCall: isLoading,
               child: Column(children: [
                 const ApplicationIcon(),
                 CustomTextField(
+                  controller: email,
                   text: 'Email',
                   onChanged: (userEmail) {
                     email.text = userEmail;
                   },
                 ),
                 CustomTextField(
+                  controller: password,
                   isPassword: true,
                   icon: Icons.lock,
                   text: 'Password',
@@ -54,6 +56,8 @@ class _LoginPageState extends State<LoginPage> {
                           email: email.text,
                           password: password.text,
                           context: context);
+                      email.clear();
+                      password.clear();
                       setState(() {
                         isLoading = false;
                       });

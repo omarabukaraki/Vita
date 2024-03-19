@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:vitafit/firebase_options.dart';
 import 'package:vitafit/login_page.dart';
 import 'core/app_color.dart';
+import 'home_feature/home_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,31 +21,14 @@ class VitaFit extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'VitaFit',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: AppColor.kPrimary),
         useMaterial3: true,
       ),
-      home: (FirebaseAuth.instance.currentUser != null &&
-              FirebaseAuth.instance.currentUser!.emailVerified)
+      home: (FirebaseAuth.instance.currentUser != null)
           ? const HomePage()
           : const LoginPage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-          child: ElevatedButton(
-              onPressed: () async {
-                await FirebaseAuth.instance.signOut();
-                Navigator.pop(context);
-              },
-              child: const Text('logout'))),
     );
   }
 }

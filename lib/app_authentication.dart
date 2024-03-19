@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:vitafit/main.dart';
 import 'core/helper/custom_snack_bar.dart';
+import 'home_feature/home_page.dart';
 
 class AppAuthentication {
   CollectionReference users = FirebaseFirestore.instance.collection('users');
